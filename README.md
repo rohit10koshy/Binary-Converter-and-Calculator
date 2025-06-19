@@ -15,10 +15,13 @@
 ---
 ## Dependencies 
 To install all dependencies listed in requirements.txt, run
+```bash
 pip install -r requirements.txt
-
+```
 ## ▶️ Run the Program
-python binary_converter.py
+```bash
+ python binary_converter.py
+```
 
 ### Prerequisites
 
