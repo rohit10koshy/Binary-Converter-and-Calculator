@@ -1,4 +1,4 @@
-# 🧮BinaryConv-Calci
+# 🧮Binary Converter and Calculator
 
 > A simple binary-decimal converter calculator built using Python  
 > Easily convert between Binary ↔ Decimal with a clean and minimal interface.
