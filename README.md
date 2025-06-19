@@ -13,6 +13,9 @@
 - Input validation for errors
 
 ---
+## Dependencies 
+To install all dependencies listed in requirements.txt, run
+pip install -r requirements.txt
 
 ## ▶️ Run the Program
 python binary_converter.py
