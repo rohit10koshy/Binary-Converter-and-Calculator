@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Converter and Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Binary Converter and Calculator</h1>
+    <div style="margin-bottom: 20px;">
+        <button id="btnConverter" onclick="showSection('converter')" style="margin-right: 10px;">Binary Converter</button>
+        <button id="btnCalculator" onclick="showSection('calculator')" style="margin-right: 10px;">Scientific Calculator</button>
+        <button id="btnBinaryCalc" onclick="showSection('binaryCalculator')">Binary Calculator</button>
+    </div>
+
+    <div id="converter" class="card">
+        <p>Enter a decimal number to convert it to binary, 
+            or enter a binary number to convert it to decimal.
+            Click on the above function you want to use</p>
+            
+        <div>
+            <label for="decimalInput">Decimal Number:</label>
+            <input type="number" id="decimalInput" placeholder="Enter a decimal number">
+            <button onclick="convertToBinary()">Convert to Binary</button>
+        </div>
+        <div>
+            <label for="binaryInput">Binary Number:</label>
+            <input type="text" id="binaryInput" placeholder="Enter a binary number">
+            <button onclick="convertToDecimal()">Convert to Decimal</button>
+        </div>
+        <div id="result"></div>
+    </div>
+
+    <div id="calculator" class="card" style="display:none;">
+        <h2>Scientific Calculator🧮</h2>
+        <div id="calcDisplay" style="min-height: 2em; background: #f0f0f0; color: #000; border-radius: 4px; padding: 6px 10px; margin-bottom: 12px; font-family: monospace; font-size: 1.1em; user-select: none;"></div>
+        <div id="calcButtons" style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px;">
+            <button onclick="appendCalc('7')">7</button>
+            <button onclick="appendCalc('8')">8</button>
+            <button onclick="appendCalc('9')">9</button>
+            <button onclick="appendCalc('(')">(</button>
+            <button onclick="appendCalc(')')">)</button>
+            <button onclick="clearCalc()">C</button>
+
+            <button onclick="appendCalc('4')">4</button>
+            <button onclick="appendCalc('5')">5</button>
+            <button onclick="appendCalc('6')">6</button>
+            <button onclick="appendCalc('+')">+</button>
+            <button onclick="appendCalc('-')">-</button>
+            <button onclick="appendCalc('^')">^</button>
+
+            <button onclick="appendCalc('1')">1</button>
+            <button onclick="appendCalc('2')">2</button>
+            <button onclick="appendCalc('3')">3</button>
+            <button onclick="appendCalc('*')">*</button>
+            <button onclick="appendCalc('/')">/</button>
+            <button onclick="appendCalc('sqrt(')">√</button>
+
+            <button onclick="appendCalc('0')">0</button>
+            <button onclick="appendCalc('.')">.</button>
+            <button onclick="appendCalc('sin(')">sin</button>
+            <button onclick="appendCalc('cos(')">cos</button>
+            <button onclick="appendCalc('tan(')">tan</button>
+            <button onclick="appendCalc('log(')">log</button>
+
+            <button style="grid-column: span 6; background: #00bfff; color: white; font-weight: 700;" onclick="calculateExpression()">=</button>
+        </div>
+        <div id="calcResult" style="margin-top: 12px; font-weight: 700; color: #232323; min-height: 1.5em;"></div>
+    </div>
+
+    <div id="binaryCalculator" class="card" style="display:none;">
+        <h2>Binary Calculator</h2>
+        <div>
+            <label for="binaryInput1">Binary Number 1:</label>
+            <input type="text" id="binaryInput1" placeholder="Enter first binary number">
+        </div>
+        <div>
+            <label for="binaryInput2">Binary Number 2:</label>
+            <input type="text" id="binaryInput2" placeholder="Enter second binary number">
+        </div>
+        <div>
+            <button onclick="binaryCalculate('add')">Add (+)</button>
+            <button onclick="binaryCalculate('subtract')">Subtract (-)</button>
+            <button onclick="binaryCalculate('multiply')">Multiply (×)</button>
+            <button onclick="binaryCalculate('divide')">Divide (÷)</button>
+            <button onclick="clearBinaryCalc()">Clear</button>
+        </div>
+        <div id="binaryCalcResult" style="margin-top: 12px; font-weight: 700; color: #232323; min-height: 1.5em;"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
